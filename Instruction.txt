@@ -1,0 +1,19 @@
+Hi!
+
+This is an instruction of how to test our implementation.
+(Our implementation meets all the requirements and is tested)
+
+1. Windows, Java 7, RMI port open.
+2. Please make sure the previous test is ended in a clean way (pressed X before closing the windows), or the system will not behave as expected. This is because of the limitations of the legacy code.
+3. We made an assumption that System C will include System B, and System B includes System A. So, please first test the implementation in folder SystemABC. There are two screenshots (.PNG) which shows how it looks like on our machines.
+4. Execute compile.bat to compile.
+5. You may directly test System C because it includes A and B: Execute EMStart.bat, make sure the RMI started, and execute SystemC.bat.
+6. Some consoles or indicators may overlap on your machine. Please adjust their position if you need.
+7. The "Security Simulator" enables you to simulate a window break, a door break, a motion or start a fire.
+8. As is said in the write up, the "Security Console" enables you to arm or disarm the intrusion system, confirm/cancel the sprinkler, silence the intrusion alarm or the fire alarm, or reset the system to safe (e.g. when the guard has solved the problem).
+9. The "maintenance console" enables you to list all controllers and sensors. Now you can try to terminate a device (not just close the window: also terminate the hidden window/process). You will see the "System Unhealthy" indicator becomes red.
+Use the "remove a device" feature of the maintenance console. When you removed this device, the system will indicate "healthy" again.
+10. You may try to add a fake (malicious) device. The malicious device will be detected as "response abnormal". (See AbstractDevice.java line 73)
+11. You may set the interval of health check in the maintain console. But too big  values won't work. The default one is fine.
+12. You can hit "X" and terminate System C. Then, execute EMStart.bat then SystemAB.bat to test System A and B. Basically, they are a subset of System C.
+
